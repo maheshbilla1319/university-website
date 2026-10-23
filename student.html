@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduNova Student Dashboard">
+  <title>Student Dashboard | EduNova</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="css/student.css">
+</head>
+
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="logo" aria-label="EduNova University home">
+  <img src="assets/image-1.webp" alt="EduNova University Logo" class="logo-img">
+ 
+</a>
+
+    <div class="student-mini">
+      <img
+        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80"
+        alt="Student profile"
+        class="mini-avatar"
+      >
+      <div>
+        <h3 id="sidebarStudentName">Alex Morgan</h3>
+        <p>Student Account</p>
+      </div>
+      <span class="online-dot"></span>
+    </div>
+
+    <p class="menu-heading">MAIN MENU</p>
+
+    <nav class="sidebar-nav" aria-label="Student navigation">
+      <a href="#overview" class="nav-link active" data-section="overview">
+        <i class="bi bi-grid-1x2-fill"></i><span>Overview</span>
+      </a>
+      <a href="#courses" class="nav-link" data-section="courses">
+        <i class="bi bi-journal-bookmark-fill"></i><span>My Courses</span>
+        <span class="nav-count">4</span>
+      </a>
+      <a href="#assignments" class="nav-link" data-section="assignments">
+        <i class="bi bi-clipboard-check"></i><span>Assignments</span>
+        <span class="nav-count warning-count">3</span>
+      </a>
+      <a href="#timetable" class="nav-link" data-section="timetable">
+        <i class="bi bi-calendar3"></i><span>Timetable</span>
+      </a>
+      <a href="#results" class="nav-link" data-section="results">
+        <i class="bi bi-bar-chart-fill"></i><span>Results</span>
+      </a>
+
+      <p class="menu-heading secondary-heading">PERSONAL</p>
+
+      <a href="#profile" class="nav-link" data-section="profile">
+        <i class="bi bi-person-circle"></i><span>My Profile</span>
+      </a>
+      <a href="#settings" class="nav-link" data-section="settings">
+        <i class="bi bi-gear-fill"></i><span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <span class="help-icon"><i class="bi bi-headset"></i></span>
+        <h4>Need help?</h4>
+        <p>Contact your student support team.</p>
+        <a href="404.html" data-section="support">Get support <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <button class="logout-button" id="logoutButton">
+        <i class="bi bi-box-arrow-left"></i>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main area -->
+  <div class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div>
+          <p class="breadcrumb">Student Portal <i class="bi bi-chevron-right"></i> <span id="currentPageName">Overview</span></p>
+          <h2 id="topbarTitle">Dashboard</h2>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <label class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="search" id="dashboardSearch" placeholder="Search courses..." aria-label="Search dashboard">
+        </label>
+
+        <button class="icon-button notification-button" id="notificationButton" aria-label="Notifications">
+          <i class="bi bi-bell"></i>
+          <span class="notification-dot"></span>
+        </button>
+
+        <button class="topbar-profile" id="profileShortcut" aria-label="Open profile">
+          <img
+            src="assets/image-15.webp"
+            alt=""
+          >
+          <span><strong id="topbarStudentName">Alex Morgan</strong><small>Student</small></span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="dashboard-content">
+
+      <!-- Overview -->
+      <section class="dashboard-section" id="overview" data-page-title="Overview">
+        <div class="welcome-banner" data-aos="fade-up">
+          <div class="welcome-copy">
+            <span class="banner-eyebrow"><i class="bi bi-stars"></i> YOUR LEARNING SPACE</span>
+            <h1>Welcome back, <span id="welcomeStudentName">Alex</span>!</h1>
+            <p>Every day is a new opportunity to learn something amazing. Keep up the great work.</p>
+            <a href="404.html" class="banner-button" data-section="courses">Continue learning <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="banner-art">
+            <div class="banner-circle"></div>
+            <img
+              src="assets/image-20.webp"
+              alt="University students learning together"
+            >
+            <span class="floating-badge"><i class="bi bi-mortarboard-fill"></i> Keep growing!</span>
+          </div>
+        </div>
+
+        <div class="section-heading" data-aos="fade-up">
+          <div>
+            <span class="eyebrow">YOUR PROGRESS</span>
+            <h2>Learning overview</h2>
+          </div>
+          <span class="date-chip"><i class="bi bi-calendar-event"></i> Academic Year 2026–27</span>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="50">
+            <span class="stat-icon green-bg"><i class="bi bi-journal-bookmark-fill"></i></span>
+            <p>Enrolled Courses</p>
+            <div class="stat-bottom"><strong>04</strong><span class="stat-note">This semester</span></div>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <span class="stat-icon gold-bg"><i class="bi bi-check2-circle"></i></span>
+            <p>Completed Lessons</p>
+            <div class="stat-bottom"><strong>28</strong><span class="stat-note">Keep it up!</span></div>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="150">
+            <span class="stat-icon blue-bg"><i class="bi bi-clock-history"></i></span>
+            <p>Study Hours</p>
+            <div class="stat-bottom"><strong>36<span class="stat-unit">h</span></strong><span class="stat-note">This month</span></div>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <span class="stat-icon purple-bg"><i class="bi bi-trophy-fill"></i></span>
+            <p>Overall Grade</p>
+            <div class="stat-bottom"><strong>A-</strong><span class="stat-note">Great progress</span></div>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="content-card courses-card" id="courses" data-page-title="My Courses" data-aos="fade-up">
+            <div class="card-heading">
+              <div><span class="eyebrow">YOUR CLASSES</span><h2>Continue learning</h2></div>
+              <a href="404.html" class="text-link" data-section="courses">View all <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="course-grid">
+              <article class="course-card searchable-item">
+                <div class="course-image">
+                  <img src="assets/image-21.webp" alt="Web development course">
+                  <span class="course-category">DEVELOPMENT</span>
+                </div>
+                <div class="course-body">
+                  <div class="course-meta"><span><i class="bi bi-play-circle"></i> 12 lessons</span><span>65%</span></div>
+                  <h3>Web Development</h3>
+                  <p>HTML, CSS &amp; JavaScript</p>
+                  <div class="progress-track"><span style="width:65%"></span></div>
+                  <button class="course-action" data-open-course="Web Development">Continue course <i class="bi bi-arrow-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable-item">
+                <div class="course-image">
+                  <img src="assets/image-23.webp" alt="Data analytics course">
+                  <span class="course-category">DATA SCIENCE</span>
+                </div>
+                <div class="course-body">
+                  <div class="course-meta"><span><i class="bi bi-play-circle"></i> 16 lessons</span><span>42%</span></div>
+                  <h3>Data Analytics</h3>
+                  <p>Data, insights &amp; reports</p>
+                  <div class="progress-track"><span style="width:42%"></span></div>
+                  <button class="course-action" data-open-course="Data Analytics">Continue course <i class="bi bi-arrow-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable-item">
+                <div class="course-image">
+                  <img src="assets/image-24.webp" alt="Business management course">
+                  <span class="course-category">MANAGEMENT</span>
+                </div>
+                <div class="course-body">
+                  <div class="course-meta"><span><i class="bi bi-play-circle"></i> 10 lessons</span><span>80%</span></div>
+                  <h3>Business Management</h3>
+                  <p>Strategy &amp; leadership</p>
+                  <div class="progress-track"><span style="width:80%"></span></div>
+                  <button class="course-action" data-open-course="Business Management">Continue course <i class="bi bi-arrow-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable-item">
+                <div class="course-image">
+                  <img src="assets/image-22.webp" alt="UI and UX design course">
+                  <span class="course-category">DESIGN</span>
+                </div>
+                <div class="course-body">
+                  <div class="course-meta"><span><i class="bi bi-play-circle"></i> 14 lessons</span><span>30%</span></div>
+                  <h3>UI/UX Design</h3>
+                  <p>Design thinking &amp; prototyping</p>
+                  <div class="progress-track"><span style="width:30%"></span></div>
+                  <button class="course-action" data-open-course="UI/UX Design">Continue course <i class="bi bi-arrow-right"></i></button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <aside class="right-column">
+            <section class="content-card assignments-card" id="assignments" data-page-title="Assignments" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-heading">
+                <div><span class="eyebrow">STAY ON TRACK</span><h2>Upcoming tasks</h2></div>
+                <span class="small-count">3 pending</span>
+              </div>
+
+              <div class="task-list">
+                <article class="task-item">
+                  <span class="task-icon task-green"><i class="bi bi-code-slash"></i></span>
+                  <div class="task-info"><h3>HTML Project</h3><p>Web Development</p><span class="due-date"><i class="bi bi-calendar2"></i> Oct 24, 2026</span></div>
+                  <span class="priority high">High</span>
+                </article>
+                <article class="task-item">
+                  <span class="task-icon task-gold"><i class="bi bi-file-earmark-bar-graph"></i></span>
+                  <div class="task-info"><h3>Data Report</h3><p>Data Analytics</p><span class="due-date"><i class="bi bi-calendar2"></i> Oct 27, 2026</span></div>
+                  <span class="priority medium">Medium</span>
+                </article>
+                <article class="task-item">
+                  <span class="task-icon task-purple"><i class="bi bi-palette"></i></span>
+                  <div class="task-info"><h3>Design Prototype</h3><p>UI/UX Design</p><span class="due-date"><i class="bi bi-calendar2"></i> Oct 30, 2026</span></div>
+                  <span class="priority low">Low</span>
+                </article>
+              </div>
+              <button class="full-width-link" data-section="assignments">View assignments <i class="bi bi-arrow-right"></i></button>
+            </section>
+
+            <section class="content-card announcement-card" data-aos="fade-up" data-aos-delay="150">
+              <div class="card-heading">
+                <div><span class="eyebrow">CAMPUS NEWS</span><h2>Announcements</h2></div>
+                <i class="bi bi-megaphone announcement-title-icon"></i>
+              </div>
+              <div class="announcement-item">
+                <span class="announcement-date">OCT 22</span>
+                <div><h3>Library orientation</h3><p>Learn about research resources and study spaces.</p></div>
+              </div>
+              <div class="announcement-item">
+                <span class="announcement-date">OCT 25</span>
+                <div><h3>Campus tech event</h3><p>Explore new ideas with fellow students.</p></div>
+              </div>
+              <button class="full-width-link" data-section="announcements">All announcements <i class="bi bi-arrow-right"></i></button>
+            </section>
+          </aside>
+        </div>
+
+        <section class="content-card timetable-card" id="timetable" data-page-title="Timetable" data-aos="fade-up">
+          <div class="card-heading">
+            <div><span class="eyebrow">PLAN YOUR DAY</span><h2>Today's timetable</h2></div>
+            <span class="date-chip" id="todayDate"></span>
+          </div>
+          <div class="schedule-list">
+            <article class="schedule-item">
+              <span class="schedule-time">09:00 AM</span>
+              <span class="schedule-line"></span>
+              <span class="schedule-color schedule-green"></span>
+              <div class="schedule-info"><h3>Web Development</h3><p>Room 204 · Dr. James Wilson</p></div>
+              <span class="class-status ongoing">Learning</span>
+            </article>
+            <article class="schedule-item">
+              <span class="schedule-time">11:00 AM</span>
+              <span class="schedule-line"></span>
+              <span class="schedule-color schedule-gold"></span>
+              <div class="schedule-info"><h3>Data Analytics</h3><p>Lab 03 · Prof. Sarah Lee</p></div>
+              <span class="class-status upcoming">Upcoming</span>
+            </article>
+            <article class="schedule-item">
+              <span class="schedule-time">02:00 PM</span>
+              <span class="schedule-line"></span>
+              <span class="schedule-color schedule-purple"></span>
+              <div class="schedule-info"><h3>UI/UX Design</h3><p>Design Studio · Prof. Michael Chen</p></div>
+              <span class="class-status upcoming">Upcoming</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-card results-card" id="results" data-page-title="Results" data-aos="fade-up">
+          <div class="card-heading">
+            <div><span class="eyebrow">ACADEMIC PERFORMANCE</span><h2>Your results</h2></div>
+          </div>
+          <div class="result-summary">
+            <div class="grade-circle"><strong>A-</strong><span>Overall grade</span></div>
+            <div><h3>Keep up the excellent work!</h3><p>Your displayed grades are sample dashboard data. Connect your university results system to show actual grades.</p></div>
+          </div>
+          <div class="result-row"><span>Web Development</span><strong>88%</strong><div class="progress-track"><span style="width:88%"></span></div></div>
+          <div class="result-row"><span>Data Analytics</span><strong>82%</strong><div class="progress-track"><span style="width:82%"></span></div></div>
+          <div class="result-row"><span>Business Management</span><strong>91%</strong><div class="progress-track"><span style="width:91%"></span></div></div>
+        </section>
+
+        <section class="content-card profile-card" id="profile" data-page-title="My Profile" data-aos="fade-up">
+          <div class="card-heading"><div><span class="eyebrow">YOUR INFORMATION</span><h2>My profile</h2></div></div>
+          <div class="profile-layout">
+            <img class="profile-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=250&q=80" alt="Student profile portrait">
+            <div class="profile-details">
+              <h3 id="profileStudentName">Alex Morgan</h3>
+              <p>Student · EduNova University</p>
+              <div class="profile-fields">
+                <div><span>Email</span><strong id="profileEmail">student@example.com</strong></div>
+                <div><span>Student ID</span><strong>EN-2026-001</strong></div>
+                <div><span>Program</span><strong>Computer Science</strong></div>
+                <div><span>Academic Year</span><strong>2026–2027</strong></div>
+              </div>
+              <p class="sample-note">Sample profile details. Load verified student information from your backend in production.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-card settings-card" id="settings" data-page-title="Settings" data-aos="fade-up">
+          <div class="card-heading"><div><span class="eyebrow">PREFERENCES</span><h2>Settings</h2></div></div>
+          <div class="setting-row"><div><h3>Email notifications</h3><p>Receive updates about assignments and courses.</p></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="setting-row"><div><h3>Study reminders</h3><p>Get reminders for upcoming study sessions.</p></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="setting-row"><div><h3>Weekly progress summary</h3><p>Review your learning progress each week.</p></div><label class="switch"><input type="checkbox"><span></span></label></div>
+          <p class="sample-note">These demo preferences are not saved to a server.</p>
+        </section>
+
+        <section class="content-card support-card" id="support" data-page-title="Student Support" data-aos="fade-up">
+          <div class="card-heading"><div><span class="eyebrow">WE'RE HERE TO HELP</span><h2>Student support</h2></div></div>
+          <p>If you need assistance with courses, assignments, or account access, contact your university support team.</p>
+          <a class="support-email" href="mailto:support@edunova.example"><i class="bi bi-envelope"></i> Contact student support</a>
+        </section>
+
+        <section class="content-card announcements-page" id="announcements" data-page-title="Announcements" data-aos="fade-up">
+          <div class="card-heading"><div><span class="eyebrow">LATEST UPDATES</span><h2>Campus announcements</h2></div></div>
+          <article class="announcement-item"><span class="announcement-date">OCT 22</span><div><h3>Library orientation</h3><p>Learn about research resources and study spaces.</p></div></article>
+          <article class="announcement-item"><span class="announcement-date">OCT 25</span><div><h3>Campus tech event</h3><p>Explore new ideas with fellow students.</p></div></article>
+        </section>
+
+        <footer class="dashboard-footer">
+          <p>© <span id="footerYear"></span> EduNova University. Inspiring minds. Building futures.</p>
+          <a href="index.html">Visit website <i class="bi bi-arrow-up-right"></i></a>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <!-- Course action dialog -->
+  <dialog class="course-dialog" id="courseDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="closeCourseDialog" aria-label="Close dialog"><i class="bi bi-x-lg"></i></button>
+      <span class="dialog-icon"><i class="bi bi-journal-bookmark-fill"></i></span>
+      <h2 id="dialogCourseTitle">Course</h2>
+      <p>This is a sample course card. Connect your learning management system to open actual lessons and course materials.</p>
+      <button class="dialog-action" id="dialogOk">Got it</button>
+    </div>
+  </dialog>
+
+  <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>

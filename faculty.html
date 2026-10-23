@@ -1,0 +1,447 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0B291D">
+  <title>Faculty Dashboard | EduNova University</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/faculty.css">
+</head>
+
+<body>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+     <a href="index.html" class="logo" aria-label="EduNova University home">
+  <img src="assets/image-1.webp" alt="EduNova University Logo" class="logo-img">
+ 
+</a>
+
+    <div class="faculty-profile">
+      <img
+        src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=120&q=80"
+        alt="Faculty profile"
+        class="avatar"
+      >
+      <div class="faculty-profile-info">
+        <strong id="sidebarFacultyName">Dr. Ananya Rao</strong>
+        <span>Senior Faculty</span>
+        <small><i class="bi bi-circle-fill"></i> Faculty Portal</small>
+      </div>
+    </div>
+
+    <p class="menu-label">FACULTY WORKSPACE</p>
+    <nav class="sidebar-nav" aria-label="Faculty navigation">
+      <a href="#overview" class="nav-link active" data-section="overview">
+        <i class="bi bi-grid-1x2-fill"></i><span>Overview</span>
+      </a>
+      <a href="#classes" class="nav-link" data-section="classes">
+        <i class="bi bi-easel2-fill"></i><span>My Classes</span><span class="nav-count">4</span>
+      </a>
+      <a href="#attendance" class="nav-link" data-section="attendance">
+        <i class="bi bi-person-check-fill"></i><span>Attendance</span>
+      </a>
+      <a href="#assignments" class="nav-link" data-section="assignments">
+        <i class="bi bi-journal-check"></i><span>Assignments</span><span class="nav-count gold-count">8</span>
+      </a>
+      <a href="#students" class="nav-link" data-section="students">
+        <i class="bi bi-people-fill"></i><span>Students</span>
+      </a>
+      <a href="#grades" class="nav-link" data-section="grades">
+        <i class="bi bi-bar-chart-fill"></i><span>Grades & Results</span>
+      </a>
+
+      <p class="menu-label menu-label-spaced">PERSONAL</p>
+
+      <a href="#schedule" class="nav-link" data-section="schedule">
+        <i class="bi bi-calendar3"></i><span>My Schedule</span>
+      </a>
+      <a href="#messages" class="nav-link" data-section="messages">
+        <i class="bi bi-chat-left-dots-fill"></i><span>Messages</span><span class="nav-count">3</span>
+      </a>
+      <a href="#profile" class="nav-link" data-section="profile">
+        <i class="bi bi-person-vcard-fill"></i><span>My Profile</span>
+      </a>
+      <a href="#settings" class="nav-link" data-section="settings">
+        <i class="bi bi-gear-fill"></i><span>Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="help-card">
+        <div class="help-icon"><i class="bi bi-headset"></i></div>
+        <h4>Need assistance?</h4>
+        <p>Contact the academic support team for help.</p>
+        <a href="#messages" data-section="messages">Get support <i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <button class="logout-button" id="logoutButton" type="button">
+        <i class="bi bi-box-arrow-left"></i><span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <main class="main-area">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button
+          class="icon-button menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false"
+          aria-controls="sidebar"
+        >
+          <i class="bi bi-list"></i>
+        </button>
+
+        <div>
+          <div class="breadcrumb">EduNova <i class="bi bi-chevron-right"></i> Faculty <i class="bi bi-chevron-right"></i> <span id="currentPageName">Overview</span></div>
+          <h1 id="pageTitle">Faculty Dashboard</h1>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <label class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="search" id="dashboardSearch" placeholder="Search dashboard..." aria-label="Search dashboard">
+        </label>
+
+        <button class="icon-button notification-button" id="notificationButton" type="button" aria-label="View notifications">
+          <i class="bi bi-bell"></i><span class="notification-dot"></span>
+        </button>
+
+        <button class="top-profile" id="profileShortcut" type="button" aria-label="Open faculty profile">
+          <img
+            src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=100&q=80"
+            alt=""
+          >
+          <span><strong id="topFacultyName">Dr. Ananya Rao</strong><small>Faculty</small></span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard-content">
+
+      <!-- OVERVIEW -->
+      <section class="dashboard-section" id="overview" data-page-title="Overview">
+        <div class="welcome-banner" data-aos="fade-up">
+          <div class="welcome-copy">
+            <span class="banner-eyebrow"><i class="bi bi-stars"></i> FACULTY PORTAL</span>
+            <h2>Good morning, <span id="welcomeName">Ananya</span>!</h2>
+            <p>Inspire your students, manage your classes, and make every lesson count. Your academic workspace is ready.</p>
+            <a href="404.html" class="primary-button" data-section="classes">
+              Explore My Classes <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+          <div class="banner-art">
+            <div class="banner-ring"></div>
+            <img
+              src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=850&q=85"
+              alt="Faculty teaching university students"
+            >
+            <div class="floating-badge"><i class="bi bi-mortarboard-fill"></i><span>Teach. Inspire. Lead.</span></div>
+          </div>
+        </div>
+
+        <div class="section-heading" data-aos="fade-up">
+          <div><span class="eyebrow">YOUR ACADEMIC SNAPSHOT</span><h2>Teaching Overview</h2></div>
+          <span class="date-chip" id="todayDate"><i class="bi bi-calendar3"></i></span>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="stat-top"><span class="stat-icon green-bg"><i class="bi bi-easel2-fill"></i></span><span class="stat-trend">This term</span></div>
+            <p>Active Courses</p><div class="stat-value">04</div><small>Across 2 semesters</small>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="80">
+            <div class="stat-top"><span class="stat-icon gold-bg"><i class="bi bi-people-fill"></i></span><span class="stat-trend">Enrolled</span></div>
+            <p>Total Students</p><div class="stat-value">186</div><small>Across all your classes</small>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="160">
+            <div class="stat-top"><span class="stat-icon blue-bg"><i class="bi bi-journal-check"></i></span><span class="stat-trend attention">Needs review</span></div>
+            <p>Pending Assignments</p><div class="stat-value">08</div><small>Awaiting evaluation</small>
+          </article>
+          <article class="stat-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="stat-top"><span class="stat-icon purple-bg"><i class="bi bi-person-check-fill"></i></span><span class="stat-trend">This week</span></div>
+            <p>Average Attendance</p><div class="stat-value">92<span class="percent">%</span></div><small>Across your classes</small>
+          </article>
+        </div>
+
+        <div class="content-grid">
+          <section class="panel" id="classes-preview">
+            <div class="panel-heading">
+              <div><span class="eyebrow">TEACHING</span><h2>My Courses</h2></div>
+              <a href="404.html" class="text-link" data-section="classes">All courses <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <div class="course-grid">
+              <article class="course-card searchable" data-aos="fade-up">
+                <div class="course-image">
+                  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Web development course">
+                  <span class="course-tag">COMPUTER SCIENCE</span>
+                </div>
+                <div class="course-body">
+                  <span class="course-code">CS301 · Semester 5</span>
+                  <h3>Web Development</h3>
+                  <p><i class="bi bi-people"></i> 48 students <span><i class="bi bi-clock"></i> 4 hrs/week</span></p>
+                  <div class="course-footer"><span>Course progress</span><strong>75%</strong></div>
+                  <div class="progress-track"><span style="width:75%"></span></div>
+                  <button class="course-action" data-open-course="Web Development" type="button">View course <i class="bi bi-arrow-up-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable" data-aos="fade-up" data-aos-delay="100">
+                <div class="course-image">
+                  <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Data analytics course">
+                  <span class="course-tag">DATA SCIENCE</span>
+                </div>
+                <div class="course-body">
+                  <span class="course-code">DS204 · Semester 4</span>
+                  <h3>Data Analytics</h3>
+                  <p><i class="bi bi-people"></i> 42 students <span><i class="bi bi-clock"></i> 3 hrs/week</span></p>
+                  <div class="course-footer"><span>Course progress</span><strong>60%</strong></div>
+                  <div class="progress-track"><span style="width:60%"></span></div>
+                  <button class="course-action" data-open-course="Data Analytics" type="button">View course <i class="bi bi-arrow-up-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable" data-aos="fade-up">
+                <div class="course-image">
+                  <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Software engineering students collaborating">
+                  <span class="course-tag">ENGINEERING</span>
+                </div>
+                <div class="course-body">
+                  <span class="course-code">SE305 · Semester 5</span>
+                  <h3>Software Engineering</h3>
+                  <p><i class="bi bi-people"></i> 51 students <span><i class="bi bi-clock"></i> 3 hrs/week</span></p>
+                  <div class="course-footer"><span>Course progress</span><strong>68%</strong></div>
+                  <div class="progress-track"><span style="width:68%"></span></div>
+                  <button class="course-action" data-open-course="Software Engineering" type="button">View course <i class="bi bi-arrow-up-right"></i></button>
+                </div>
+              </article>
+
+              <article class="course-card searchable" data-aos="fade-up" data-aos-delay="100">
+                <div class="course-image">
+                  <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Project management course">
+                  <span class="course-tag">MANAGEMENT</span>
+                </div>
+                <div class="course-body">
+                  <span class="course-code">PM202 · Semester 3</span>
+                  <h3>Project Management</h3>
+                  <p><i class="bi bi-people"></i> 45 students <span><i class="bi bi-clock"></i> 2 hrs/week</span></p>
+                  <div class="course-footer"><span>Course progress</span><strong>55%</strong></div>
+                  <div class="progress-track"><span style="width:55%"></span></div>
+                  <button class="course-action" data-open-course="Project Management" type="button">View course <i class="bi bi-arrow-up-right"></i></button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <div class="right-column">
+            <section class="panel" id="assignments-preview">
+              <div class="panel-heading">
+                <div><span class="eyebrow">STUDENT WORK</span><h2>Pending Reviews</h2></div>
+                <span class="count-badge">08</span>
+              </div>
+
+              <div class="task-item searchable">
+                <span class="task-icon task-gold"><i class="bi bi-file-earmark-text"></i></span>
+                <div class="task-info"><h3>Web Project Report</h3><p>Web Development · 4 submissions</p><small><i class="bi bi-calendar3"></i> Due Oct 23</small></div>
+                <span class="priority high">Urgent</span>
+              </div>
+              <div class="task-item searchable">
+                <span class="task-icon task-blue"><i class="bi bi-file-earmark-bar-graph"></i></span>
+                <div class="task-info"><h3>Data Analysis Lab</h3><p>Data Analytics · 3 submissions</p><small><i class="bi bi-calendar3"></i> Due Oct 24</small></div>
+                <span class="priority medium">Normal</span>
+              </div>
+              <div class="task-item searchable">
+                <span class="task-icon task-purple"><i class="bi bi-journal-bookmark"></i></span>
+                <div class="task-info"><h3>Design Documentation</h3><p>Software Engineering · 1 submission</p><small><i class="bi bi-calendar3"></i> Due Oct 25</small></div>
+                <span class="priority low">Normal</span>
+              </div>
+              <a href="404.html" class="full-width-link" data-section="assignments">Review all assignments <i class="bi bi-arrow-right"></i></a>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading"><div><span class="eyebrow">CAMPUS UPDATES</span><h2>Announcements</h2></div><i class="bi bi-megaphone announcement-icon"></i></div>
+              <div class="announcement-item searchable">
+                <div class="announcement-date">OCT<br>23</div>
+                <div><h3>Faculty Meeting</h3><p>Academic block · Conference Room A</p></div>
+              </div>
+              <div class="announcement-item searchable">
+                <div class="announcement-date">OCT<br>26</div>
+                <div><h3>Mid-term Grade Submission</h3><p>Please submit marks before the deadline.</p></div>
+              </div>
+              <a href="404.html" class="full-width-link" data-section="messages">View campus updates <i class="bi bi-arrow-right"></i></a>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- MY CLASSES -->
+      <section class="dashboard-section detail-section" id="classes" data-page-title="My Classes" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">TEACHING CENTRE</span><h2>My Classes</h2><p>Manage your courses, class information, and teaching progress.</p></div>
+        <div class="course-grid full-course-grid">
+          <article class="course-card searchable">
+            <div class="course-image"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Web development class"><span class="course-tag">CS301</span></div>
+            <div class="course-body"><h3>Web Development</h3><p>Semester 5 · 48 students</p><div class="progress-track"><span style="width:75%"></span></div><button class="course-action" data-open-course="Web Development" type="button">Open course details <i class="bi bi-arrow-right"></i></button></div>
+          </article>
+          <article class="course-card searchable">
+            <div class="course-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Data analytics class"><span class="course-tag">DS204</span></div>
+            <div class="course-body"><h3>Data Analytics</h3><p>Semester 4 · 42 students</p><div class="progress-track"><span style="width:60%"></span></div><button class="course-action" data-open-course="Data Analytics" type="button">Open course details <i class="bi bi-arrow-right"></i></button></div>
+          </article>
+          <article class="course-card searchable">
+            <div class="course-image"><img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Software engineering class"><span class="course-tag">SE305</span></div>
+            <div class="course-body"><h3>Software Engineering</h3><p>Semester 5 · 51 students</p><div class="progress-track"><span style="width:68%"></span></div><button class="course-action" data-open-course="Software Engineering" type="button">Open course details <i class="bi bi-arrow-right"></i></button></div>
+          </article>
+          <article class="course-card searchable">
+            <div class="course-image"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=700&q=80" alt="Project management class"><span class="course-tag">PM202</span></div>
+            <div class="course-body"><h3>Project Management</h3><p>Semester 3 · 45 students</p><div class="progress-track"><span style="width:55%"></span></div><button class="course-action" data-open-course="Project Management" type="button">Open course details <i class="bi bi-arrow-right"></i></button></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ATTENDANCE -->
+      <section class="dashboard-section detail-section" id="attendance" data-page-title="Attendance" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">CLASS MANAGEMENT</span><h2>Attendance Register</h2><p>Sample class attendance overview. Connect your student database to record official attendance.</p></div>
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Today's Classes</h2><p class="panel-subtitle">Select a class to mark a demo attendance status.</p></div></div>
+          <div class="table-wrap"><table><thead><tr><th>Course</th><th>Class</th><th>Students</th><th>Attendance</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Web Development</td><td>CS301</td><td>48</td><td><span class="status-pill present">92% present</span></td><td><button class="small-button attendance-action" data-class="Web Development" type="button">Mark attendance</button></td></tr>
+            <tr><td>Data Analytics</td><td>DS204</td><td>42</td><td><span class="status-pill present">90% present</span></td><td><button class="small-button attendance-action" data-class="Data Analytics" type="button">Mark attendance</button></td></tr>
+            <tr><td>Software Engineering</td><td>SE305</td><td>51</td><td><span class="status-pill pending">Not verified</span></td><td><button class="small-button attendance-action" data-class="Software Engineering" type="button">Mark attendance</button></td></tr>
+            <tr><td>Project Management</td><td>PM202</td><td>45</td><td><span class="status-pill present">94% present</span></td><td><button class="small-button attendance-action" data-class="Project Management" type="button">Mark attendance</button></td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <!-- ASSIGNMENTS -->
+      <section class="dashboard-section detail-section" id="assignments" data-page-title="Assignments" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">ASSESSMENTS</span><h2>Assignments & Reviews</h2><p>Keep track of submissions and outstanding evaluation tasks.</p></div>
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Assignment Tracker</h2><p class="panel-subtitle">Demo entries for the faculty interface.</p></div><span class="count-badge">8 pending</span></div>
+          <div class="table-wrap"><table><thead><tr><th>Assignment</th><th>Course</th><th>Submissions</th><th>Deadline</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Web Project Report</td><td>Web Development</td><td>4 pending</td><td>Oct 23</td><td><button class="small-button review-action" data-task="Web Project Report" type="button">Review</button></td></tr>
+            <tr><td>Data Analysis Lab</td><td>Data Analytics</td><td>3 pending</td><td>Oct 24</td><td><button class="small-button review-action" data-task="Data Analysis Lab" type="button">Review</button></td></tr>
+            <tr><td>Design Documentation</td><td>Software Engineering</td><td>1 pending</td><td>Oct 25</td><td><button class="small-button review-action" data-task="Design Documentation" type="button">Review</button></td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <!-- STUDENTS -->
+      <section class="dashboard-section detail-section" id="students" data-page-title="Students" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">STUDENT DIRECTORY</span><h2>My Students</h2><p>Example student records. Replace these entries with your authorised student API.</p></div>
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Student Directory</h2><p class="panel-subtitle">Sample data for layout demonstration.</p></div><span class="count-badge">186 students</span></div>
+          <div class="table-wrap"><table><thead><tr><th>Student</th><th>Student ID</th><th>Course</th><th>Year</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr class="searchable"><td><div class="student-cell"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" alt=""><span>Priya Sharma</span></div></td><td>EN2401</td><td>Web Development</td><td>Year 3</td><td><span class="status-pill present">Active</span></td></tr>
+            <tr class="searchable"><td><div class="student-cell"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=80&q=80" alt=""><span>Arjun Kumar</span></div></td><td>EN2402</td><td>Data Analytics</td><td>Year 2</td><td><span class="status-pill present">Active</span></td></tr>
+            <tr class="searchable"><td><div class="student-cell"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=80&q=80" alt=""><span>Rahul Verma</span></div></td><td>EN2403</td><td>Software Engineering</td><td>Year 3</td><td><span class="status-pill present">Active</span></td></tr>
+            <tr class="searchable"><td><div class="student-cell"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt=""><span>Sneha Reddy</span></div></td><td>EN2404</td><td>Project Management</td><td>Year 2</td><td><span class="status-pill present">Active</span></td></tr>
+          </tbody></table></div>
+        </div>
+      </section>
+
+      <!-- GRADES -->
+      <section class="dashboard-section detail-section" id="grades" data-page-title="Grades & Results" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">ACADEMIC PERFORMANCE</span><h2>Grades & Results</h2><p>Review course performance and assessment summaries.</p></div>
+        <div class="stats-grid compact-stats">
+          <article class="stat-card"><span class="stat-icon green-bg"><i class="bi bi-clipboard-check"></i></span><p>Assessments completed</p><div class="stat-value">24</div></article>
+          <article class="stat-card"><span class="stat-icon gold-bg"><i class="bi bi-award"></i></span><p>Average class score</p><div class="stat-value">84<span class="percent">%</span></div></article>
+          <article class="stat-card"><span class="stat-icon blue-bg"><i class="bi bi-hourglass-split"></i></span><p>Marks awaiting entry</p><div class="stat-value">06</div></article>
+        </div>
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Course Performance</h2><p class="panel-subtitle">Illustrative values only.</p></div></div>
+          <div class="performance-row searchable"><div><strong>Web Development</strong><small>CS301</small></div><div class="performance-bar"><span style="width:86%"></span></div><strong>86%</strong></div>
+          <div class="performance-row searchable"><div><strong>Data Analytics</strong><small>DS204</small></div><div class="performance-bar"><span style="width:81%"></span></div><strong>81%</strong></div>
+          <div class="performance-row searchable"><div><strong>Software Engineering</strong><small>SE305</small></div><div class="performance-bar"><span style="width:88%"></span></div><strong>88%</strong></div>
+          <div class="performance-row searchable"><div><strong>Project Management</strong><small>PM202</small></div><div class="performance-bar"><span style="width:79%"></span></div><strong>79%</strong></div>
+        </div>
+      </section>
+
+      <!-- SCHEDULE -->
+      <section class="dashboard-section detail-section" id="schedule" data-page-title="My Schedule" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">YOUR TIMETABLE</span><h2>My Teaching Schedule</h2><p>Your example weekly teaching plan.</p></div>
+        <div class="panel">
+          <div class="panel-heading"><div><h2>Today's Schedule</h2><p class="panel-subtitle">Times are sample entries; adjust them to your university timetable.</p></div></div>
+          <div class="schedule-item"><span class="schedule-time">09:00 AM</span><span class="schedule-dot green-dot"></span><div><h3>Web Development</h3><p>Room A-204 · Semester 5</p></div><span class="status-pill present">Lecture</span></div>
+          <div class="schedule-item"><span class="schedule-time">11:00 AM</span><span class="schedule-dot gold-dot"></span><div><h3>Data Analytics</h3><p>Lab B-105 · Semester 4</p></div><span class="status-pill pending">Lab</span></div>
+          <div class="schedule-item"><span class="schedule-time">01:30 PM</span><span class="schedule-dot purple-dot"></span><div><h3>Software Engineering</h3><p>Room C-301 · Semester 5</p></div><span class="status-pill present">Lecture</span></div>
+          <div class="schedule-item"><span class="schedule-time">03:00 PM</span><span class="schedule-dot green-dot"></span><div><h3>Student Consultation</h3><p>Faculty Office · Block C</p></div><span class="status-pill pending">Meeting</span></div>
+        </div>
+      </section>
+
+      <!-- MESSAGES -->
+      <section class="dashboard-section detail-section" id="messages" data-page-title="Messages" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">COMMUNICATION</span><h2>Messages & Announcements</h2><p>Campus updates and sample messages for your workspace.</p></div>
+        <div class="panel">
+          <div class="message-item searchable"><span class="message-avatar"><i class="bi bi-building"></i></span><div><h3>Academic Office</h3><p>Faculty meeting scheduled for October 23. Please review the agenda before attending.</p><small>Campus announcement · Unread</small></div><button class="small-button message-action" type="button" data-message="Academic Office">Mark read</button></div>
+          <div class="message-item searchable"><span class="message-avatar gold-bg"><i class="bi bi-person"></i></span><div><h3>Student Support</h3><p>Please review pending academic support requests for your classes.</p><small>Student services · Unread</small></div><button class="small-button message-action" type="button" data-message="Student Support">Mark read</button></div>
+          <div class="message-item searchable"><span class="message-avatar blue-bg"><i class="bi bi-calendar-event"></i></span><div><h3>Examination Cell</h3><p>Mid-term grade submission reminders are available in the academic portal.</p><small>Examination update · Read</small></div><button class="small-button message-action" type="button" data-message="Examination Cell">Mark read</button></div>
+        </div>
+      </section>
+
+      <!-- PROFILE -->
+      <section class="dashboard-section detail-section" id="profile" data-page-title="My Profile" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">PERSONAL INFORMATION</span><h2>My Faculty Profile</h2><p>Example profile details. Connect to your authenticated profile API for real information.</p></div>
+        <div class="panel profile-panel">
+          <img class="profile-photo" src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?auto=format&fit=crop&w=300&q=85" alt="Faculty profile photo">
+          <div class="profile-details"><span class="eyebrow">SENIOR FACULTY</span><h2 id="profileFacultyName">Dr. Ananya Rao</h2><p>Department of Computer Science</p>
+            <div class="profile-fields">
+              <div><small>Faculty ID</small><strong>EN-F1024</strong></div>
+              <div><small>Email</small><strong id="profileEmail">ananya@example.edu</strong></div>
+              <div><small>Department</small><strong>Computer Science</strong></div>
+              <div><small>Designation</small><strong>Senior Faculty</strong></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SETTINGS -->
+      <section class="dashboard-section detail-section" id="settings" data-page-title="Settings" hidden>
+        <div class="section-intro" data-aos="fade-up"><span class="eyebrow">PREFERENCES</span><h2>Dashboard Settings</h2><p>Manage your local interface preferences.</p></div>
+        <div class="panel">
+          <div class="setting-row"><div><h3>Email notifications</h3><p>Show email notification preference in this demo.</p></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="setting-row"><div><h3>Assignment reminders</h3><p>Keep assignment reminders enabled.</p></div><label class="switch"><input type="checkbox" checked><span></span></label></div>
+          <div class="setting-row"><div><h3>Campus announcements</h3><p>Show campus announcement preference.</p></div><label class="switch"><input type="checkbox"><span></span></label></div>
+          <p class="settings-note">These switches demonstrate the interface only. Save preferences to a backend if you want them to persist across devices.</p>
+        </div>
+      </section>
+
+      <footer class="dashboard-footer">
+        <p>© <span id="footerYear"></span> EduNova University. All rights reserved.</p>
+        <p>Designed for <a href="404.html" data-section="overview">academic excellence</a>.</p>
+      </footer>
+    </div>
+  </main>
+
+  <dialog class="course-dialog" id="courseDialog">
+    <div class="dialog-content">
+      <button class="dialog-close" id="closeCourseDialog" type="button" aria-label="Close dialog"><i class="bi bi-x-lg"></i></button>
+      <span class="dialog-icon"><i class="bi bi-easel2-fill"></i></span>
+      <span class="eyebrow">COURSE DETAILS</span>
+      <h2 id="dialogCourseTitle">Course title</h2>
+      <p>This is a demo course panel. Connect your course-management backend to show actual modules, rosters, and learning materials.</p>
+      <button class="dialog-action" id="dialogOk" type="button">Close</button>
+    </div>
+  </dialog>
+
+  <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/faculty.js"></script>
+</body>
+</html>
