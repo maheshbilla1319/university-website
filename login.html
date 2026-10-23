@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | EduNova University</title>
+  <meta name="description" content="Sign in to your EduNova University account.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+  <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+  <div class="background-decoration decoration-one"></div>
+  <div class="background-decoration decoration-two"></div>
+
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="EduNova University home">
+      <img
+        src="assets/image-1.webp"
+        alt="EduNova University Logo"
+        class="logo-img"
+      >
+    </a>
+
+    <a href="index.html" class="back-home">
+      <i class="bi bi-arrow-left"></i>
+      Back to Home
+    </a>
+  </header>
+
+  <main class="login-wrapper">
+
+    <!-- Welcome Panel -->
+    <section class="welcome-panel" data-aos="fade-right">
+      <div class="welcome-content">
+
+        <span class="eyebrow">
+          <span class="eyebrow-line"></span>
+          WELCOME TO STACLY
+        </span>
+
+        <h1>Your future<br>starts <span class="gold-text">here.</span></h1>
+
+        <p class="welcome-description">
+          Sign in to continue your learning journey, access your courses,
+          and explore new opportunities.
+        </p>
+
+        <div class="welcome-features">
+
+          <div class="feature">
+            <span class="feature-icon">
+              <i class="bi bi-mortarboard"></i>
+            </span>
+
+            <div>
+              <h3>Learn without limits</h3>
+              <p>Access your learning resources in one place.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <span class="feature-icon">
+              <i class="bi bi-shield-check"></i>
+            </span>
+
+            <div>
+              <h3>Your account, your space</h3>
+              <p>Access the tools available for your selected role.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="welcome-bottom">
+          <span class="status-dot"></span>
+          Inspiring minds. Building futures.
+        </div>
+
+      </div>
+
+      <div class="welcome-circle circle-one"></div>
+      <div class="welcome-circle circle-two"></div>
+    </section>
+
+    <!-- Login Panel -->
+    <section
+      class="login-panel"
+      data-aos="fade-left"
+      data-aos-delay="150"
+    >
+      <div class="login-card">
+
+        <!-- <div class="mobile-logo">
+          <span class="logo-icon">
+            <i class="bi bi-mortarboard-fill"></i>
+          </span>
+          <span>Edu<span class="gold-text">Nova</span></span>
+        </div> -->
+
+        <div class="form-heading">
+          <span class="form-label">YOUR ACCOUNT</span>
+          <h2>Welcome back!</h2>
+          <p>Please sign in to continue.</p>
+        </div>
+
+        <form id="loginForm" novalidate>
+
+          <!-- Role -->
+          <div class="form-group">
+            <label for="role">Sign in as</label>
+
+            <div class="input-wrap">
+              <i class="bi bi-person-badge input-icon"></i>
+
+              <select id="role" name="role" required>
+                <option value="">Select your role</option>
+                <option value="student">Student</option>
+                <option value="faculty">Faculty</option>
+                
+              </select>
+
+              <i class="bi bi-chevron-down select-arrow"></i>
+            </div>
+
+            <small class="field-error" id="roleError"></small>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email address</label>
+
+            <div class="input-wrap">
+              <i class="bi bi-envelope input-icon"></i>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="username"
+                required
+              >
+            </div>
+
+            <small class="field-error" id="emailError"></small>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <div class="label-row">
+              <label for="password">Password</label>
+
+              <a href="404.html" class="forgot-link">
+                Forgot password?
+              </a>
+            </div>
+
+            <div class="input-wrap">
+              <i class="bi bi-lock input-icon"></i>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                required
+              >
+
+              <button
+                type="button"
+                class="password-toggle"
+                id="togglePassword"
+                aria-label="Show password"
+              >
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+
+            <small class="field-error" id="passwordError"></small>
+          </div>
+
+          <!-- Remember Me -->
+          <label class="remember-row">
+            <input type="checkbox" id="rememberMe">
+            <span class="custom-checkbox"></span>
+            <span>Remember me on this device</span>
+          </label>
+
+          <!-- Form Message -->
+          <div
+            id="formMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+          ></div>
+
+          <!-- Sign In -->
+          <button
+            type="submit"
+            class="login-button"
+            id="loginButton"
+          >
+            <span>Sign In</span>
+            <i class="bi bi-arrow-right"></i>
+          </button>
+
+        </form>
+
+        <div class="divider">
+          <span>OR CONTINUE WITH</span>
+        </div>
+
+<!-- Google Button: Redirects to 404.html -->
+<a href="404.html" class="google-button" id="googleButton">
+
+  <svg
+    class="google-icon"
+    viewBox="0 0 48 48"
+    aria-hidden="true"
+  >
+    <path
+      fill="#EA4335"
+      d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+      transform="translate(0 4)"
+    />
+    <path
+      fill="#4285F4"
+      d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.73 7.18l7.66 5.94c4.47-4.13 7.11-10.2 7.11-17.59z"
+    />
+    <path
+      fill="#FBBC05"
+      d="M10.53 28.59a14.4 14.4 0 0 1 0-9.18l-7.98-6.19a24 24 0 0 0 0 21.56l7.98-6.19z"
+    />
+    <path
+      fill="#34A853"
+      d="M24 48c6.48 0 11.93-2.13 15.9-5.86l-7.66-5.94c-2.13 1.43-4.86 2.28-8.24 2.28-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 40.62 14.62 48 24 48z"
+    />
+  </svg>
+
+  Continue with Google
+
+</a>
+
+        <p class="signup-text">
+          Don't have an account?
+          <a href="signup.html">Create account</a>
+        </p>
+
+        <p class="security-note">
+          <i class="bi bi-shield-lock"></i>
+          Your account is protected by secure authentication.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer
+  <footer class="site-footer">
+    <p>
+      © <span id="year"></span> EduNova University. All rights reserved.
+    </p>
+
+    <div>
+      <a href="404.html">Terms</a>
+      <a href="404.html">Privacy</a>
+    </div>
+  </footer> -->
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
